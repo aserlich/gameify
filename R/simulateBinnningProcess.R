@@ -27,7 +27,8 @@ rebin <- function(counts, lowerBounds, upperBounds, cutSize = 1, repNum = 10, se
     counts <- as.data.frame(counts)
   }
   mapply(drawUnif, counts, lowerBounds, upperBounds,
-         MoreArgs = list(cutSize = cutSize, repNum =repNum), SIMPLIFY = simplify) #returns a matrix with lists inside
+         MoreArgs = list(cutSize = cutSize, repNum =repNum),
+         SIMPLIFY = simplify) #returns a matrix with lists inside
 }
 
 #######################################
@@ -64,7 +65,7 @@ replicateBins <- function(count, n, lowerBound, upperBound, cutSize){
                      lowerBound = lowerBound,
                      upperBound = upperBound,
                      cutSize = cutSize)
-    if(ncol(outcome) == 1){ #stupid apply simplifies, transpose
+    if(ncol(outcome) == 1) { #stupid apply simplifies, transpose
       outcome <- t(outcome)
     }
     return(outcome)
@@ -80,6 +81,6 @@ recutData <- function(simulations, lowerBound, upperBound, cutSize) {
 #For us in remove NAs because of
 #empty bins in the simulating process
 RemoveNAs <- function(x) {
-  x[is.na(x)] <-0
+  x[is.na(x)] <- 0
   return(x)
 }

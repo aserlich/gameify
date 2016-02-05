@@ -16,7 +16,8 @@
 #'@details The idea of this data structure ist that it is similar to an imputation matrix.
 #'
 
-formatSimsOutput <- function(simulates, numObs, binLower, binUpper, cutSize, repNum, outputType = "list_of_bins") {
+formatSimsOutput <- function(simulates, numObs, binLower, binUpper,
+                             cutSize, repNum, outputType = "list_of_bins") {
   binNum <- length(binLower)
   listofDf <- list()
   for (obs in 1:numObs) { #reverse the for loops

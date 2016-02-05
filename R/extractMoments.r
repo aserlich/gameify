@@ -21,9 +21,7 @@ binnedMean <- function(counts,
   binMid <- (upperBounds + lowerBounds)/2
   print(binMid)
   n <- rowSums(counts, na.rm = FALSE)
-  #print(n)
   wc <- sweep(counts, 2, binMid, `*`)
-  #print(wc)
   muhat <- rowSums(wc, na.rm = FALSE) / n
   return(muhat)
 }
@@ -47,7 +45,7 @@ binnedMSE <- function(counts, mu,
                       lowerBounds = seq(0, 95, 5),
                       upperBounds = seq(5, 100, 5)) {
   binMid <- (lowerBounds + upperBounds)/2
-  unnorm <- sweep(counts, 2, ((binMid-mu)^2),  `*`)
+  unnorm <- sweep(counts, 2, ((binMid - mu)^2),  `*`)
   print(unnorm)
   MSE <- rowSums(unnorm, na.rm = TRUE) / rowSums(counts, na.rm = TRUE)
   return(MSE)
@@ -73,9 +71,7 @@ detectNonContig <- function(row, bins = length(row)) {
     rep <- NA
   } else {
     rep <- 0
-    for(i in 2:(bins - 1)) {
-      #print(i)
-      #print(x[(i+1)])
+    for (i in 2:(bins - 1)) {
       if(row[i-1] > 0 & row[i+1] > 0 & row[i] == 0) {
         rep <- 1
         break
