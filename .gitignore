@@ -20,3 +20,4 @@ vignettes/*.pdf
 
 #Dropbox 
 *.DS_Store
+.Rproj.user
