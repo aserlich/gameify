@@ -29,7 +29,7 @@ Assumes that the midpoint of the bin is the mean of that prediction.
 upper <- seq(10, 100, 10)
 lower <- seq(0, 90, 10)
 counts <- c(0, 0, 4, 4, 4, 2, 0, 0, 0, 0)
-counts2 <- c(1, 2, 1, 4, 4, 2, 0, 0, 0, 0
+counts2 <- c(1, 2, 1, 4, 4, 2, 0, 0, 0, 0)
 counts_df <- as.data.frame(rbind(counts, counts2))
 binnedMSE(counts_df, mu = 33, lowerBounds = lower, upperBounds = upper)
 }

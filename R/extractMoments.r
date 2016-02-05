@@ -1,9 +1,10 @@
 #
 #'Calculate the mean for a matrix of binned data
-#'@param counts
+#'@param counts a \code{matrix} or \code{data.frame} of binned data
 #'@param lowerBounds A vector of the lower cut points of the binnned data
 #'@param upperBounds A vector of the upper cutpoints of the original binnned data
 #'@return A vector of estimated means
+#'@export
 #'@examples
 #'upper <- seq(10, 100, 10)
 #'lower <- seq(0, 90, 10)
@@ -36,7 +37,7 @@ binnedMean <- function(counts,
 #'@examples upper <- seq(10, 100, 10)
 #'lower <- seq(0, 90, 10)
 #'counts <- c(0, 0, 4, 4, 4, 2, 0, 0, 0, 0)
-#'counts2 <- c(1, 2, 1, 4, 4, 2, 0, 0, 0, 0
+#'counts2 <- c(1, 2, 1, 4, 4, 2, 0, 0, 0, 0)
 #'counts_df <- as.data.frame(rbind(counts, counts2))
 #'binnedMSE(counts_df, mu = 33, lowerBounds = lower, upperBounds = upper)
 #'@return A vector with one observation for each row in \code{counts}
@@ -58,6 +59,7 @@ binnedMSE <- function(counts, mu,
 #'@details Assumes there are at least some coins in some bins.
 #'@return returns either a 0 if there are non-contiguous counts of 1 if there are.
 #'Will often be used with \code{apply} to operate on a matrix
+#'@export
 #'@examples counts2 <- c(1, 2, 1, 4, 4, 2, 0, 0, 0, 0)
 #'counts3 <- c(1, 2, 0, 4, 4, 2, 0, 0, 0, 0)
 #'detectNonContig(counts2)

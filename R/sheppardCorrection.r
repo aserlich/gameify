@@ -11,6 +11,7 @@
 #'  \item The variance with the adjusted shepherd correction \code{sigma2Adj}
 #'  }
 #'The the sheppard corrected variance
+#'@export
 #'@examples
 #'upper <- seq(10, 100, 10)
 #'lower <- seq(0, 90, 10)

@@ -1,6 +1,6 @@
 Package: gameify
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Functions to deal with games
 Version: 0.1
 Date: 2016-02-03
 Author: Who wrote it
@@ -8,3 +8,4 @@ Maintainer: Who to complain to <yourfault@somewhere.net>
 Description: More about what it does (maybe more than one line)
 License: What license is it under?
 LazyData: TRUE
+Imports: plyr
