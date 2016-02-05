@@ -3,5 +3,6 @@
 export(binnedMSE)
 export(binnedMean)
 export(detectNonContig)
+export(formatSimsOutput)
 export(rebin)
 export(sheppardCorrection)

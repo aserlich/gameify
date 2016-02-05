@@ -8,7 +8,7 @@ binnedMean(counts, lowerBounds = seq(0, 95, 5), upperBounds = seq(5, 100,
   5))
 }
 \arguments{
-\item{counts}{a \code{matrix} or \code{data.frame} of binned counts}
+\item{counts}{a \code{matrix} or \code{data.frame} of binned data}
 
 \item{lowerBounds}{A vector of the lower cut points of the binnned data}
 

@@ -7,12 +7,13 @@
 #'@param simulates a list object created from \code{rebin}
 #'@param numObs The number of observations that were simulated from
 #'@param binLower A vector of the lower cut points of the of the original binned ata
-#'@param binUPper A vector of the upper cutponts of the original binnned data
+#'@param binUpper A vector of the upper cutponts of the original binnned data
 #'@param A scalar that is the the length of the new (less coarse) simulated data bin
 #'@param repNum The number of replications carried out
 #'@param outputType currently either \code{"list_of_bins} or \code{list_of_draws}. \code{"list_of_bins} returns a list object
 #'whose length is the number of simulations in each list there is a matrix of counts of how many objects were places in each bin
 #'for each observation. \code{list_of_draws} has a similar data structure but only includes the matrix of draws.
+#'@export
 #'@details The idea of this data structure ist that it is similar to an imputation matrix.
 #'
 
