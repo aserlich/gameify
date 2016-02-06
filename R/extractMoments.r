@@ -1,5 +1,4 @@
-#
-#'Calculate the mean for a matrix of binned data
+##'Calculate the mean for a matrix of binned data
 #'@param counts a \code{matrix} or \code{data.frame} of binned data
 #'@param lowerBounds A vector of the lower cut points of the binnned data
 #'@param upperBounds A vector of the upper cutpoints of the original binnned data
@@ -19,7 +18,7 @@ binnedMean <- function(counts,
   if(any(!(class(counts) %in% c("matrix", "data.frame") ) ) )  {
     stop("counts must be a matrix or data.frame")
   }
-  binMid <- (upperBounds + lowerBounds)/2
+  binMid <- (upperBounds + lowerBounds) / 2
   print(binMid)
   n <- rowSums(counts, na.rm = FALSE)
   wc <- sweep(counts, 2, binMid, `*`)
@@ -45,8 +44,8 @@ binnedMean <- function(counts,
 binnedMSE <- function(counts, mu,
                       lowerBounds = seq(0, 95, 5),
                       upperBounds = seq(5, 100, 5)) {
-  binMid <- (lowerBounds + upperBounds)/2
-  unnorm <- sweep(counts, 2, ((binMid - mu)^2),  `*`)
+  binMid <- (lowerBounds + upperBounds) / 2
+  unnorm <- sweep(counts, 2, ( (binMid - mu)^2),  `*`)
   print(unnorm)
   MSE <- rowSums(unnorm, na.rm = TRUE) / rowSums(counts, na.rm = TRUE)
   return(MSE)
@@ -67,14 +66,12 @@ binnedMSE <- function(counts, mu,
 #'apply(rbind(counts2, counts3), 1, detectNonContig)
 #'
 detectNonContig <- function(row, bins = length(row)) {
-  #print(row)
-  #print(row[1]==0)
-  if(is.na(row[1])) {
+  if (is.na(row[1])) {
     rep <- NA
   } else {
     rep <- 0
     for (i in 2:(bins - 1)) {
-      if(row[i-1] > 0 & row[i+1] > 0 & row[i] == 0) {
+      if (row[i-1] > 0 & row[i+1] > 0 & row[i] == 0) {
         rep <- 1
         break
       }

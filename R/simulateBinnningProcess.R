@@ -21,7 +21,8 @@
 #'two different unusual data structures. This is good for checking the simulation process but is not useful. Depending on the usage
 #'you may want the data in different structures. Use \code{\link{formatSimsOutput}} to get the data in the format you desire
 #'@export
-rebin <- function(counts, lowerBounds, upperBounds, cutSize = 1, repNum = 10, seed = 1234, simplify = FALSE) {
+rebin <- function(counts, lowerBounds, upperBounds, cutSize = 1,
+                  repNum = 10, seed = 1234, simplify = FALSE) {
   set.seed(seed)
   if(any(class(counts) == "matrix")) {
     counts <- as.data.frame(counts)
@@ -65,7 +66,7 @@ replicateBins <- function(count, n, lowerBound, upperBound, cutSize){
                      lowerBound = lowerBound,
                      upperBound = upperBound,
                      cutSize = cutSize)
-    if(ncol(outcome) == 1) { #stupid apply simplifies, transpose
+    if (ncol(outcome) == 1) { #stupid apply simplifies, transpose
       outcome <- t(outcome)
     }
     return(outcome)
@@ -74,12 +75,11 @@ replicateBins <- function(count, n, lowerBound, upperBound, cutSize){
 
 #'takes data that is drawn from a continous distribution and recuts it.
 recutData <- function(simulations, lowerBound, upperBound, cutSize) {
-  #print(cat(cutSize,"\n", lowerBound, "\n",upperBound))
   cut(simulations,
       breaks = seq(lowerBound, upperBound, by = cutSize))
 }
-#For us in remove NAs because of
-#empty bins in the simulating process
+#'Remove NAs because of
+#'empty bins in the simulating process
 RemoveNAs <- function(x) {
   x[is.na(x)] <- 0
   return(x)
