@@ -9,8 +9,6 @@
 #'lower <- seq(0, 90, 10)
 #'counts2 <- c(1, 2, 1, 4, 4, 2, 0, 0, 0, 0)
 #'counts3 <- c(1, 2, 1, 4, 4, 0, 0, 2, 0, 0)
-#'detectNonContig(counts2)
-#'detectNonContig(counts3)
 #'binnedMean(rbind(counts2, counts3), lower, upper)
 binnedMean <- function(counts,
                        lowerBounds = seq(0, 95, 5),
